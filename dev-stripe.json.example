@@ -1,0 +1,6 @@
+{
+  "public": "pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "secret": "sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "restricted": "rk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "maxVerifications": 100
+}

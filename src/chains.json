@@ -1,0 +1,39 @@
+{
+  "0x89": {
+    "rpc": "https://polygon-rpc.com/",
+    "blockExplorer": "https://polygonscan.com",
+    "name": "Polygon",
+    "nativeCurrency": {
+      "name": "MATIC",
+      "symbol": "MATIC",
+      "decimals": 18
+    },
+    "Verification": "0x47830b5Ee4a5472210400fB1811C3396fDAAf381",
+    "ExampleFeeToken": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
+  },
+  "0xa86a": {
+    "rpc": "https://api.avax.network/ext/bc/C/rpc",
+    "blockExplorer": "https://snowtrace.io",
+    "name": "Avalanche",
+    "nativeCurrency": {
+      "name": "AVAX",
+      "symbol": "AVAX",
+      "decimals": 18
+    },
+    "Verification": "0xDb896cd12bAbFeC15ec4bffACe8c0ee7887fBD71",
+    "ExampleFeeToken": "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e"
+  },
+  "0x539": {
+    "rpc": "http://localhost:8545/",
+    "blockExplorer": "https://etherscan.io",
+    "isTest": true,
+    "name": "Ganache Localhost",
+    "nativeCurrency": {
+      "name": "ETH",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "Verification": null,
+    "ExampleFeeToken": null
+  }
+}

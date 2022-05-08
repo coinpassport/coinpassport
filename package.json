@@ -1,0 +1,25 @@
+{
+  "name": "coinpassport",
+  "version": "1.0.0",
+  "description": "Passport verifications for Ethereum dApps",
+  "scripts": {
+    "dev": "lite-server",
+    "dev-server": "node server/index.js",
+    "test": "node test/index.js",
+    "todo": "bash -c \"grep -rn 'TODO' --exclude-dir={node_modules,build} --exclude={*.min*,*.swp,package.json,solc} *\"",
+    "build-fee-token": "./solc --bin --abi --overwrite -o build contracts/ExampleFeeToken.sol",
+    "build-dev": "./solc --bin --abi --overwrite -o build contracts/Verification.sol",
+    "build-prod": "./solc --bin --abi --overwrite -o build --optimize contracts/Verification.sol"
+  },
+  "author": "numtel <ben@latenightsketches.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ganache": "^7.0.4",
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "pg": "^8.7.3",
+    "stripe": "^8.215.0",
+    "web3": "^1.7.1"
+  }
+}

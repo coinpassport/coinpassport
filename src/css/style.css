@@ -1,0 +1,83 @@
+@font-face { font-family: Montserrat; src: url(Montserrat.ttf); }
+body { background-color: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); font-family: Montserrat, sans-serif; max-width: 720px; padding: 100px 15px 80px; margin: 0 auto; min-height: 100vh; color: #000; }
+header { position: fixed; top:0; left:0; width: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: space-between; align-items: center; }
+@media (max-width: 500px) { header { flex-direction: column; padding-bottom: 10px; } }
+#chains { padding:0 10px; }
+#chains select { background: #8bc9ea; border: 0; padding: 5px; border-radius: 5px; color: #222; }
+#chains button { background: #8bc9ea; padding: 5px; border-radius: 5px; color:#222; font-size: 90%; }
+#chains button:hover { background: #d5e9f4; }
+#chains button:hover span { display: none; }
+#chains button.disconnect:hover:after { content: "Disconnect" }
+#chains button:active { background: #459dcc; }
+h1 { margin: 0; padding: 6px 10px; text-shadow: 0 0 3px rgba(255,255,255,0.6); cursor: default; }
+h1 .logo { font-size: 100%; margin-right: 10px; }
+h1 a { text-decoration: none; color: #000; }
+h2 { font-size: 130%; }
+a { color: #333; }
+button { padding: 15px 20px; background: #0c6ca0; color: #fff; border: 0; border-radius: 10px; font-size: 110%; cursor: pointer; }
+button.cancel { background: #819dac; }
+button:hover { background: #0f7db9; }
+button:active { background: #0b5e8a; }
+button:disabled { cursor: default; background: #ccc; color: #999; }
+#steps { list-style: none; padding: 0; }
+#steps>li { margin: 40px 20px; text-align:center; display:none; }
+#steps>li.active { display: block; }
+#steps>li .lds-ring, #status .commands>.lds-ring { display: none; }
+#steps>li.loading button, #status.loading .commands>button { display: none; }
+#steps>li.loading .lds-ring, #status.loading .commands>.lds-ring { display: inline-block; }
+p.intro { font-weight: bold; }
+#how-it-works { display: flex; padding: 0; }
+@media (max-width: 500px) {
+  #how-it-works { flex-direction: column; }
+  #how-it-works li { padding-bottom: 10px; }
+}
+#how-it-works li { margin: 0 10px; }
+ul.countries { list-style: none; columns: 3; line-height: 1.2em; padding: 0; }
+@media (max-width: 400px) { ul.countries { columns: 2; } }
+ul.countries li { padding-bottom: 8px; }
+#status .active { padding: 20px; background:#d5e9f4; border-radius: 10px; box-shadow: 0 0 60px rgba(0,0,0,0.2); }
+#status .msg { display: block; font-size: 120%; font-weight: bold; text-align: center; margin-bottom: 15px; }
+#status dt { float:left; font-weight: bold; }
+#status dt:after { content: ": "; padding-right: 10px; }
+#status .subtext { display: block; margin-bottom: 15px; }
+#status .commands { display: block; margin-bottom: 15px; text-align: center; }
+#status .commands button { margin-top: 10px; }
+footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(0,0,0,0.2); }
+
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
