@@ -6,8 +6,8 @@ header { position: fixed; top:0; left:0; width: 100%; background: rgba(0,0,0,0.3
 #chains select { background: #8bc9ea; border: 0; padding: 5px; border-radius: 5px; color: #222; }
 #chains button { background: #8bc9ea; padding: 5px; border-radius: 5px; color:#222; font-size: 90%; }
 #chains button:hover { background: #d5e9f4; }
-#chains button:hover span { display: none; }
-#chains button.disconnect:hover:after { content: "Disconnect" }
+#chains button:hover span.account, #chains button span.disconnect { display: none; }
+#chains button:hover span.disconnect { display: inline; }
 #chains button:active { background: #459dcc; }
 h1 { margin: 0; padding: 6px 10px; text-shadow: 0 0 3px rgba(255,255,255,0.6); cursor: default; }
 h1 .logo { font-size: 100%; margin-right: 10px; }
@@ -35,7 +35,8 @@ ul.countries li { padding-bottom: 8px; }
 #status .active { padding: 20px; background:#d5e9f4; border-radius: 10px; box-shadow: 0 0 60px rgba(0,0,0,0.2); }
 #status .lds-ring { display: none; }
 #status.loading .active>.commands>button, #status .step.loading .commands>button { display: none; }
-#status.loading .active>.commands>.lds-ring, #status .step.loading .commands>.lds-ring { display: inline-block; }
+#status .loader { text-align: center; padding: 100px 0; }
+#status.loading .loader>.lds-ring, #status.loading .active>.commands>.lds-ring, #status .step.loading .commands>.lds-ring { display: inline-block; }
 #status .msg { display: block; font-size: 120%; font-weight: bold; text-align: center; margin-bottom: 15px; }
 #status dt { float:left; font-weight: bold; }
 #status dt:after { content: ": "; padding-right: 10px; }

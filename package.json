@@ -6,6 +6,7 @@
     "dev": "lite-server",
     "dev-server": "node server/index.js",
     "test": "node test/index.js",
+    "template-strings": "node strList.js",
     "todo": "bash -c \"grep -rn 'TODO' --exclude-dir={node_modules,build} --exclude={*.min*,*.swp,package.json,solc} *\"",
     "build-fee-token": "./solc --bin --abi --overwrite -o build contracts/ExampleFeeToken.sol",
     "build-dev": "./solc --bin --abi --overwrite -o build contracts/Verification.sol",

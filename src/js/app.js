@@ -30,7 +30,11 @@ class CoinpassportApp {
     }
 
     const statusEl = document.getElementById('status');
-    statusEl.innerHTML = '';
+    statusEl.innerHTML = `
+      <div class="loader">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      </div>
+    `;
     statusEl.classList.toggle('loading', false);
     window.scrollTo(0,0);
 
@@ -497,4 +501,5 @@ function delay(ms) {
 }
 
 window.app = new CoinpassportApp;
-app.init();
+// This will call app.init()
+setLanguage();

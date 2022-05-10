@@ -2,6 +2,18 @@
 
 Open source project to link verified passports to Ethereum (and EVM compatible) wallets using [Stripe Identity](https://stripe.com/docs/identity) as a service provider.
 
+## Submit a translation
+
+Either modify an existing translation file in the `src/lang` directory or generate a new translation template using the automated string extraction tool. Only Node.js is required to perform this operation; no dependencies need to be installed.
+
+```
+$ git clone https://github.com/coinpassport/coinpassport
+$ cd coinpassport
+$ npm run template-strings --silent > src/lang/new.json
+```
+
+Submit your translation as a pull request or email it to [info@coinpassport.net](mailto:info@coinpassport.net).
+
 ## Installation
 
 Your system should have Node.js and, if running the API server, PostgreSQL installed.
