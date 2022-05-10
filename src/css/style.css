@@ -19,12 +19,8 @@ button.cancel { background: #819dac; }
 button:hover { background: #0f7db9; }
 button:active { background: #0b5e8a; }
 button:disabled { cursor: default; background: #ccc; color: #999; }
-#steps { list-style: none; padding: 0; }
-#steps>li { margin: 40px 20px; text-align:center; display:none; }
-#steps>li.active { display: block; }
-#steps>li .lds-ring, #status .commands>.lds-ring { display: none; }
-#steps>li.loading button, #status.loading .commands>button { display: none; }
-#steps>li.loading .lds-ring, #status.loading .commands>.lds-ring { display: inline-block; }
+
+.step-intro { text-align:center; }
 p.intro { font-weight: bold; }
 #how-it-works { display: flex; padding: 0; }
 @media (max-width: 500px) {
@@ -35,14 +31,18 @@ p.intro { font-weight: bold; }
 ul.countries { list-style: none; columns: 3; line-height: 1.2em; padding: 0; }
 @media (max-width: 400px) { ul.countries { columns: 2; } }
 ul.countries li { padding-bottom: 8px; }
+
 #status .active { padding: 20px; background:#d5e9f4; border-radius: 10px; box-shadow: 0 0 60px rgba(0,0,0,0.2); }
+#status .lds-ring { display: none; }
+#status.loading .active>.commands>button, #status .step.loading .commands>button { display: none; }
+#status.loading .active>.commands>.lds-ring, #status .step.loading .commands>.lds-ring { display: inline-block; }
 #status .msg { display: block; font-size: 120%; font-weight: bold; text-align: center; margin-bottom: 15px; }
 #status dt { float:left; font-weight: bold; }
 #status dt:after { content: ": "; padding-right: 10px; }
 #status .subtext { display: block; margin-bottom: 15px; }
 #status .commands { display: block; margin-bottom: 15px; text-align: center; }
 #status .commands button { margin-top: 10px; }
-footer { text-align: center; padding: 30px 0; border-top: 1px solid rgba(0,0,0,0.2); }
+footer { text-align: center; padding: 30px 0; margin-top: 30px; border-top: 1px solid rgba(0,0,0,0.2); }
 
 
 .lds-ring {

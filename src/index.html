@@ -14,83 +14,6 @@
       <div id="chains"></div>
     </header>
     <div id="status"></div>
-    <ol id="steps">
-      <li class="active">
-        <p class="intro">Link your identity to your Ethereum, Polygon, or Avalanche wallet by verifying your passport and publishing a hash of your passport number and country of citizenship.</p>
-        <p>To begin, connect your browser wallet.</p>
-        <button onclick="app.connect()">Connect Wallet</button>
-        <h2>How it Works</h2>
-        <ol id="how-it-works">
-          <li>Pay 3 USDC fee to cover verification service</li>
-          <li>Verify by taking a picture of your passport and your face with your mobile phone</li>
-          <li>Publish your verification result to the blockchain</li>
-        </ol>
-        <p>After verifying, you may redact your personal information from our servers at any time, as well as revoke your verification status if desired.</p>
-        <h2>Supported Countries</h2>
-        <ul class="countries">
-          <li>Australia</li>
-          <li>Austria</li>
-          <li>Belgium</li>
-          <li>Canada</li>
-          <li>Costa Rica</li>
-          <li>Cyprus</li>
-          <li>Czech Republic</li>
-          <li>Denmark</li>
-          <li>Estonia</li>
-          <li>Finland</li>
-          <li>France</li>
-          <li>Germany</li>
-          <li>Hong Kong</li>
-          <li>Ireland</li>
-          <li>Italy</li>
-          <li>Latvia</li>
-          <li>Liechtenstein</li>
-          <li>Lithuania</li>
-          <li>Luxemborg</li>
-          <li>Malta</li>
-          <li>Netherlands</li>
-          <li>New Zealand</li>
-          <li>Norway</li>
-          <li>Portugal</li>
-          <li>Romania</li>
-          <li>Slovakia</li>
-          <li>Slovenia</li>
-          <li>Spain</li>
-          <li>Sweden</li>
-          <li>Switzerland</li>
-          <li>United Arab Emirates</li>
-          <li>United Kingdom</li>
-          <li>United States</li>
-        </ul>
-      </li>
-      <li>
-        <h2>Step 1: Approve Fee</h2>
-        <p>Verifying your passport costs 3 USDC.</p>
-        <p>Please approve this amount.</p>
-        <button onclick="app.approveFee()">Approve 3 USDC</button>
-        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </li>
-      <li>
-        <h2>Step 2: Pay Fee</h2>
-        <p>A fee of 3 USDC is required to verify your passport.</p>
-        <p>This amount covers Stripe's fee as well as server expenses and any applicable taxes.</p>
-        <div id="testHelper"></div>
-        <button onclick="app.payFee()">Pay 3 USDC</button>
-        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </li>
-      <li>
-        <h2>Step 3: Perform Verification</h2>
-        <p>Next, prove your ownership of the account by signing the block number of your fee payment. This operation costs no gas.</p>
-        <p>You will then be redirected to Stripe's website where you will take pictures of your passport and your face.</p>
-        <button onclick="app.performVerification()">Perform Verification</button>
-        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </li>
-      <li>
-        <h2>New Verifications Temporarily Unavailable</h2>
-        <p>As a safeguard, the verification limit has been reached temporarily.</p>
-        <p>Please try again soon.</p>
-      </li>
-    </ol>
     <footer>
       <span>&copy; 2022</span> |
       <a href="/privacy-policy.html">Privacy Policy</a> |
@@ -101,6 +24,7 @@
     <script src="js/web3modal.min.js"></script>
     <!--<script src="js/walletconnect.min.js"></script>-->
     <script src="js/coinbase.min.js"></script>
+    <script src="js/templates.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
