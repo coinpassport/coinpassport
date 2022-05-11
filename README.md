@@ -21,10 +21,7 @@ Your system should have Node.js and, if running the API server, PostgreSQL insta
 ```
 $ git clone https://github.com/coinpassport/coinpassport
 $ cd coinpassport
-# Install all dependencies if running the API server locally
 $ npm install
-# Otherwise, only the production dependencies are required for the frontend
-$ npm install --only=prod
 ```
 
 Download the `solc` compiler. This is used instead of `solc-js` because it is much faster. Binaries for other systems can be found in the [Ethereum foundation repository](https://github.com/ethereum/solc-bin/).
