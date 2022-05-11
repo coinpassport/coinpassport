@@ -23,6 +23,18 @@
     "Verification": "0xDb896cd12bAbFeC15ec4bffACe8c0ee7887fBD71",
     "ExampleFeeToken": "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e"
   },
+  "0xa": {
+    "rpc": "https://mainnet.optimism.io",
+    "blockExplorer": "https://optimistic.etherscan.io",
+    "name": "Optimism",
+    "nativeCurrency": {
+      "name": "ETH",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "Verification": "0x8f2448ba4b30c394ab9fd7835fb1f0fe1a3734e0",
+    "ExampleFeeToken": "0x7f5c764cbc14f9669b88837ca1490cca17c31607"
+  },
   "0x539": {
     "rpc": "http://localhost:8545/",
     "blockExplorer": "https://etherscan.io",
