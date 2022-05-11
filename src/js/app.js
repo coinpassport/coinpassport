@@ -35,7 +35,7 @@ class CoinpassportApp {
         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
       </div>
     `;
-    statusEl.classList.toggle('loading', false);
+    statusEl.classList.toggle('loading', true);
     window.scrollTo(0,0);
 
     this.accounts = [];
@@ -68,6 +68,7 @@ class CoinpassportApp {
       this.chainDetails = this.supportedChains[this.chainId];
     } else if(this.web3) {
       statusEl.innerHTML = templates.unsupportedChain.call(this);
+      statusEl.classList.toggle('loading', false);
       return;
     }
 
@@ -121,6 +122,7 @@ class CoinpassportApp {
     } else {
       statusEl.innerHTML = templates.intro.call(this);
     }
+    statusEl.classList.toggle('loading', false);
   }
 
   async connect() {

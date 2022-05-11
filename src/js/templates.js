@@ -319,6 +319,16 @@ window.templates = {
         <h2>${__`Step 3: Perform Verification`}</h2>
         <p>${__`Next, prove your ownership of the account by signing the block number of your fee payment. This operation costs no gas.`}</p>
         <p>${__`You will then be redirected to Stripe's website where you will take pictures of your passport and your face.`}</p>
+        ${this.accountStatus.status === 'requires_input' ?
+          `<div class="active">
+            <span class="msg">${__`Further Input Required`}</span>
+            <span class="subtext">${__`Possible reasons:`}</span>
+            <ul>
+              <li>${__`Verification canceled before completion`}</li>
+              <li>${__`Submitted verification images did not validate`}</li>
+            </ul>
+            <span class="subtext">${__`Please try again.`}</span>
+          </div>` : ''}
         <span class="commands">
           <button onclick="app.performVerification()">${__`Perform Verification`}</button>
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
