@@ -243,7 +243,7 @@ window.templates = {
         </section>
         <section>
         <h2>${__`Why this Matters`}</h2>
-        <p>${__`Most blockchain voting systems suffer from the fact that anybody can make multiple accounts. Proof of Personhood seeks to rewrite this rule so that wallet size no determines vote weight.`}</p>
+        <p>${__`Most blockchain voting systems suffer from the fact that anybody can make multiple accounts. Proof of Personhood seeks to rewrite this rule so that wallet size no longer determines vote weight.`}</p>
         <p>${__`Other Proof of Personhood protocols implement elaborate schemes to accomplish this: Worldcoin scans your eyeballs, Idena requires synchronized captcha puzzle solving, Proof of Humanity slashes your necessarily-large deposit if you try to cheat.`}</p>
         <p>${__`Coinpassport utilizes your government-issued passport to ensure each person can only open one account.`}</p>
         <p>${__`The full possibilities of democratic governance can now be explored on applications built using Coinpassport.`}</p>
