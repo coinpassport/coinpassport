@@ -440,7 +440,7 @@ class CoinpassportApp {
         params: [ { chainId: toChainId } ]
       });
     } catch(error) {
-      if(error.message.match(/wallet_addEthereumChain/)) {
+      if(error.message.match(/wallet_addEthereumChain|Chain 0x[0-9a-f]+ hasn't been added/)) {
         tryAddChain = true;
       } else {
         alert(error.message);

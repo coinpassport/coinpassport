@@ -14,7 +14,7 @@ header { position: -webkit-sticky; position: sticky; top:0; width: 100%; backgro
 #chains button:hover span.account, #chains button span.disconnect { display: none; }
 #chains button:hover span.disconnect { display: inline; }
 #chains button:active { background: #62646a; }
-h1 { margin: 0; padding: 6px 10px; font-weight: 500; font-family: Inter, sans-serif; text-transform:uppercase; cursor: default; background: linear-gradient(90deg, #fae3b7, #edb851); background-clip: text; -webkit-text-fill-color: transparent; }
+h1 { margin: 0; padding: 6px 10px; font-weight: 500; font-family: Inter, sans-serif; text-transform:uppercase; cursor: default; background: linear-gradient(90deg, #fae3b7, #edb851); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 h1 .logo { font-size: 100%; margin-right: 10px; }
 h1 a { text-decoration: none; color: #000; }
 h2 { font-size: 130%; text-align: center; }
