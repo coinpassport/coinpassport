@@ -69,7 +69,7 @@ window.templates = {
   },
   unsupportedChain() {
     return `
-      <div class="active">
+      <section class="active">
         <span class="msg">${__`Your wallet is connected to an unsupported chain!`}</span>
         <span class="subtext">${__`Choose from one of the supported chains below:`}</span>
         <span class="commands">
@@ -85,7 +85,7 @@ window.templates = {
             ${__`Disconnect`}
           </button>
         </span>
-      </div>
+      </section>
     `;
   },
   accountActive() {
@@ -93,7 +93,7 @@ window.templates = {
     const countryCodeStr = String.fromCharCode(this.countryCodeInt >> 16)
       + String.fromCharCode(this.countryCodeInt - ((this.countryCodeInt >> 16) << 16));
     return `
-      <div class="active">
+      <section class="active">
         <span class="msg">
           ${__`Your account is verified and active on ${this.chainDetails.name}!`}
         </span>
@@ -150,7 +150,7 @@ window.templates = {
           </button>
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </span>
-      </div>
+      </section>
     `
   },
   waitingToPublish() {
@@ -160,7 +160,7 @@ window.templates = {
     const secondaryStep = this.allowance.gte(this.feeAmount) ?
       templates.payFee.call(this) : templates.approveFee.call(this);
     return `
-      <div class="active">
+      <section class="active">
         <span class="msg">
           ${__`Your account is verified but not yet active on ${this.chainDetails.name}.`}
         </span>
@@ -180,14 +180,14 @@ window.templates = {
         <span class="subtext">
           ${__`Otherwise, you may use the steps further below to begin a new passport verification.`}
         </span>
-      </div>
+      </section>
     ` + secondaryStep;
   },
   personalData(data) {
     const countryCodeStr = String.fromCharCode(data.countryCodeInt >> 16)
       + String.fromCharCode(data.countryCodeInt - ((data.countryCodeInt >> 16) << 16));
     return `
-      <div class="active">
+      <section class="active">
         <span class="msg">
           ${__`Select which data points to publish publicly`}
         </span>
@@ -226,25 +226,36 @@ window.templates = {
           </button>
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </span>
-      </div>
+      </section>
     `;
   },
   intro() {
     return `
       <div class="step-intro">
-        <p class="intro">${__`Link your identity to your Ethereum, Polygon, or Avalanche wallet by verifying your passport and publishing a hash of your passport number and country of citizenship.`}</p>
-        <p>${__`To begin, connect your browser wallet.`}</p>
-        <span class="commands">
-          <button onclick="app.connect()">${__`Connect Wallet`}</button>
-        </span>
+        <div class="masthead">
+          <section>
+            <p class="intro lead">${__`Prove you're a unique human by verifying your passport and publishing a hash of your passport number and country of citizenship to your Ethereum, Polygon, or Avalanche wallet.`}</p>
+            <p class="intro">${__`To begin, connect your browser wallet.`}</p>
+            <span class="commands">
+              <button onclick="app.connect()">${__`Connect Wallet`}</button>
+            </span>
+          </div>
+        </section>
+        <section>
+        <h2>${__`Why this Matters`}</h2>
+        <p>${__`Most blockchain voting systems suffer from the fact that anybody can make multiple accounts. Proof of Personhood seeks to rewrite this rule so that wallet size no determines vote weight.`}</p>
+        <p>${__`Other Proof of Personhood protocols implement elaborate schemes to accomplish this: Worldcoin scans your eyeballs, Idena requires synchronized captcha puzzle solving, Proof of Humanity slashes your necessarily-large deposit if you try to cheat.`}</p>
+        <p>${__`Coinpassport utilizes your government-issued passport to ensure each person can only open one account.`}</p>
+        <p>${__`The full possibilities of democratic governance can now be explored on applications built using Coinpassport.`}</p>
         <h2>${__`How it Works`}</h2>
         <ol id="how-it-works">
           <li>${__`Pay 3 USDC fee to cover verification service`}</li>
           <li>${__`Verify by taking a picture of your passport and your face with your mobile phone`}</li>
-          <li>${__`Publish your verification result to the blockchain`}</li>
+          <li>${__`Publish your verification result to any supported blockchain`}</li>
         </ol>
+        <h2>${__`Why Trust Coinpassport`}</h2>
         <p>${__`Your individual details will never be revealed. Your verification result only identifies your wallet as belonging to a unique human.`}</p>
-        <p>${__`After verifying, you may redact your personal information from our servers at any time, as well as revoke your verification status if desired.`}</p>
+        <p>${__`After verifying, you may (and should) redact your personal information from our servers. If you wish, you may also revoke your verification status.`}</p>
         <h2>${__`Supported Countries`}</h2>
         <ul class="countries">
           <li>${__`Australia`}</li>
@@ -281,12 +292,14 @@ window.templates = {
           <li>${__`United Kingdom`}</li>
           <li>${__`United States`}</li>
         </ul>
+        <p>${__`Stripe promises more countries to be supported in the near future.`}</p>
+        </section>
       </div>
     `;
   },
   approveFee() {
     return `
-      <div class="step">
+      <section class="step">
         <h2>${__`Step 1: Approve Fee`}</h2>
         <p>${__`Verifying your passport costs 3 USDC.`}</p>
         <p>${__`Please approve this amount.`}</p>
@@ -294,12 +307,12 @@ window.templates = {
           <button onclick="app.approveFee()">${__`Approve 3 USDC`}</button>
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </span>
-      </div>
+      </section>
     `;
   },
   payFee() {
     return `
-      <div class="step">
+      <section class="step">
         <h2>${__`Step 2: Pay Fee`}</h2>
         <p>${__`A fee of 3 USDC is required to verify your passport.`}</p>
         <p>${__`This amount covers Stripe's fee as well as server expenses and any applicable taxes.`}</p>
@@ -310,12 +323,12 @@ window.templates = {
           <button onclick="app.payFee()">${__`Pay 3 USDC`}</button>
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </span>
-      </div>
+      </section>
     `;
   },
   verify() {
     return `
-      <div class="step">
+      <section class="step">
         <h2>${__`Step 3: Perform Verification`}</h2>
         <p>${__`Next, prove your ownership of the account by signing the block number of your fee payment. This operation costs no gas.`}</p>
         <p>${__`You will then be redirected to Stripe's website where you will take pictures of your passport and your face.`}</p>
@@ -333,20 +346,27 @@ window.templates = {
           <button onclick="app.performVerification()">${__`Perform Verification`}</button>
           <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </span>
-      </div>
+      </section>
     `;
   },
   verificationProcessing() {
     return `
-      <h2>${__`Verification Processing...`}</h2>
-      <p>${__`Please refresh this page in a few minutes.`}</p>
+      <section>
+        <h2>${__`Verification Processing...`}</h2>
+        <p>${__`Please refresh this page in a few minutes.`}</p>
+        <span class="commands">
+          <button onclick="app.init()">${__`Refresh Now`}</button>
+        </span>
+      </section>
     `;
   },
   limitReached() {
     return `
-      <h2>${__`New Verifications Temporarily Unavailable`}</h2>
-      <p>${__`As a safeguard, the verification limit has been reached temporarily.`}</p>
-      <p>${__`Please try again soon.`}</p>
+      <section>
+        <h2>${__`New Verifications Temporarily Unavailable`}</h2>
+        <p>${__`As a safeguard, the verification limit has been reached temporarily.`}</p>
+        <p>${__`Please try again soon.`}</p>
+      </section>
     `;
   },
 };
