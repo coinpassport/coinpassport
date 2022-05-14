@@ -128,6 +128,10 @@ contract Verification {
     return accounts[toCheck].expiration;
   }
 
+  function addressIdHash(address toCheck) external view returns(bytes32) {
+    return accounts[toCheck].countryAndDocNumberHash;
+  }
+
   function publishPersonalData(
     bool over18,
     bytes calldata over18Signature,

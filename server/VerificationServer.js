@@ -156,7 +156,8 @@ module.exports = class VerificationServer extends PostServer {
             out.expiration = Math.floor(expirationDate.getTime() / 1000);
             out.countryAndDocNumberHash = this.web3.utils.keccak256(
               verificationReport.document.issuing_country +
-              verificationReport.document.number
+              verificationReport.document.number +
+              expirationDate.getTime().toString(10)
             );
             const hash = this.web3.utils.keccak256(this.web3.eth.abi.encodeParameters(
               [ 'address', 'uint256', 'bytes32' ],

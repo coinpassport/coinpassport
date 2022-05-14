@@ -37,9 +37,6 @@
       <p><a href="https://support.stripe.com/questions/common-questions-about-stripe-identity">Learn more</a> about how Stripe handles and stores your data.</p>
       <p>After becoming verified, you will have the option to revoke your verification and/or redact your personal data from Stripe.</p>
       <h3>Implementation Notes</h3>
-      <h4>Privacy of country and document number hashes</h4>
-      <p>The Coinpassport verification contract does not publicly reveal the country and document number hashes used internally to identify unique humans. This design decision supports user anonymity but is, on a public blockchain, more of a suggestion to application developers. There are, obviously, ways for this information to be accessed.</p>
-      <p>The most poignant application of this data point would be to allow applications to ban specific individuals even if they decide to re-verify their same passport on a different wallet. While this may be important for some applications, it is not a feature that Coinpassport supports directly.</p>
       <h4>Overlapping on passport renewal</h4>
       <p>Coinpassport sets an account to be active until the passport expiration date but passports are renewed months in advance from their expiration. This opens up a timeframe when an individual would be able to have more than one active account. At the extreme end, someone might choose to renew their passport as soon as possible, in order to maintain multiple active accounts.</p>
       <p>This is a known limitation of this type of passport verification. Coinpassport does not claim to be an absolute solution to Proof of Personhood but wishes to serve as an example to governments around the world, that they should implement their own systems of similar character but greater integration into their internal identity databases. Being such an example, Coinpassport wishes to project values of transparency, anonymity, and freedom to any kind of government-based blockchain identity verification service.</p>
@@ -52,6 +49,8 @@
     function addressActive(address toCheck) external view returns (bool);
     // Return the expiration timestamp of an address (0 if not verified)
     function addressExpiration(address toCheck) external view returns (uint);
+    // Return the unique hash for the account's passport
+    function addressIdHash(address toCheck) external view returns(bytes32);
 
     // The following functions are for accessing optionally published personal data:
     function isOver18(address toCheck) external view returns (bool);
@@ -65,10 +64,10 @@
       <h4>Contract Addresses</h4>
       <ul class="scroll">
         <li>Ethereum mainnet: <em>Coming soon</em></li>
-        <li>Optimism: <a href="https://optimistic.etherscan.io/address/0x8f2448ba4b30c394ab9fd7835fb1f0fe1a3734e0">0x8f2448ba4b30c394ab9fd7835fb1f0fe1a3734e0</a></li>
+        <li>Optimism: <a href="https://optimistic.etherscan.io/address/0x247baae25D0c32fdA5CfB902c0d87D47587CF9Da">0x247baae25D0c32fdA5CfB902c0d87D47587CF9Da</a></li>
         <li>Arbitrum: <em>Coming soon</em></li>
-        <li>Polygon: <a href="https://polygonscan.com/address/0x47830b5ee4a5472210400fb1811c3396fdaaf381">0x47830b5Ee4a5472210400fB1811C3396fDAAf381</a></li>
-        <li>Avalanche: <a href="https://snowtrace.io/address/0xdb896cd12babfec15ec4bfface8c0ee7887fbd71">0xDb896cd12bAbFeC15ec4bffACe8c0ee7887fBD71</a></li>
+        <li>Polygon: <a href="https://polygonscan.com/address/0x637aeabc614e95da58f232e493fca63d09e15b8f">0x637aeabc614e95da58f232e493fca63d09e15b8f</a></li>
+        <li>Avalanche: <a href="https://snowtrace.io/address/0x3827DC9E48B3691B171Bf2F2C6BC3Cab8218AcF6">0x3827DC9E48B3691B171Bf2F2C6BC3Cab8218AcF6</a></li>
       </ul>
     </section>
     <footer>

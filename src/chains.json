@@ -8,7 +8,7 @@
       "symbol": "MATIC",
       "decimals": 18
     },
-    "Verification": "0x47830b5Ee4a5472210400fB1811C3396fDAAf381",
+    "Verification": "0x637aEABC614E95da58f232E493fca63d09e15B8f",
     "ExampleFeeToken": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
   },
   "0xa86a": {
@@ -20,7 +20,7 @@
       "symbol": "AVAX",
       "decimals": 18
     },
-    "Verification": "0xDb896cd12bAbFeC15ec4bffACe8c0ee7887fBD71",
+    "Verification": "0x3827DC9E48B3691B171Bf2F2C6BC3Cab8218AcF6",
     "ExampleFeeToken": "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e"
   },
   "0xa": {
@@ -32,7 +32,7 @@
       "symbol": "ETH",
       "decimals": 18
     },
-    "Verification": "0x8f2448ba4b30c394ab9fd7835fb1f0fe1a3734e0",
+    "Verification": "0x247baae25D0c32fdA5CfB902c0d87D47587CF9Da",
     "ExampleFeeToken": "0x7f5c764cbc14f9669b88837ca1490cca17c31607"
   },
   "0x539": {
