@@ -36,24 +36,31 @@
       <p>Both Coinpassport and Stripe will have access to the information that you submit through the verification flow. We rely on Stripe to help store your verification data. Stripe uses access controls and security standards that are at least as stringent as those used to handle their own KYC and payments compliance data.</p>
       <p><a href="https://support.stripe.com/questions/common-questions-about-stripe-identity">Learn more</a> about how Stripe handles and stores your data.</p>
       <p>After becoming verified, you will have the option to revoke your verification and/or redact your personal data from Stripe.</p>
+      <h3>Implementation Notes</h3>
+      <h4>Privacy of country and document number hashes</h4>
+      <p>The Coinpassport verification contract does not publicly reveal the country and document number hashes used internally to identify unique humans. This design decision supports user anonymity but is, on a public blockchain, more of a suggestion to application developers. There are, obviously, ways for this information to be accessed.</p>
+      <p>The most poignant application of this data point would be to allow applications to ban specific individuals even if they decide to re-verify their same passport on a different wallet. While this may be important for some applications, it is not a feature that Coinpassport supports directly.</p>
+      <h4>Overlapping on passport renewal</h4>
+      <p>Coinpassport sets an account to be active until the passport expiration date but passports are renewed months in advance from their expiration. This opens up a timeframe when an individual would be able to have more than one active account. At the extreme end, someone might choose to renew their passport as soon as possible, in order to maintain multiple active accounts.</p>
+      <p>This is a known limitation of this type of passport verification. Coinpassport does not claim to be an absolute solution to Proof of Personhood but wishes to serve as an example to governments around the world, that they should implement their own systems of similar character but greater integration into their internal identity databases. Being such an example, Coinpassport wishes to project values of transparency, anonymity, and freedom to any kind of government-based blockchain identity verification service.</p>
       <h3>Developer Information</h3>
       <h4>Contract Specification</h4>
       <p>Coinpassport exposes functions for building applications to use verified accounts.
       <pre class="code">
-        contract Verification {
-          // Check if an address is currently verified
-          function addressActive(address toCheck) external view returns (bool);
-          // Return the expiration timestamp of an address (0 if not verified)
-          function addressExpiration(address toCheck) external view returns (uint);
+  interface Verification {
+    // Check if an address is currently verified
+    function addressActive(address toCheck) external view returns (bool);
+    // Return the expiration timestamp of an address (0 if not verified)
+    function addressExpiration(address toCheck) external view returns (uint);
 
-          // The following functions are for accessing optionally published personal data:
-          function isOver18(address toCheck) external view returns (bool);
-          function isOver21(address toCheck) external view returns (bool);
-          // Convert a country code integer to a 2 character string with JavaScript:
-          // countryCodeStr = String.fromCharCode(countryCodeInt >> 16)
-          //   + String.fromCharCode(countryCodeInt - ((countryCodeInt >> 16) << 16));
-          function getCountryCode(address toCheck) external view returns (uint);
-        }
+    // The following functions are for accessing optionally published personal data:
+    function isOver18(address toCheck) external view returns (bool);
+    function isOver21(address toCheck) external view returns (bool);
+    // Convert a country code integer to a ISO 3166-1 alpha-2 country code with JavaScript:
+    // countryCodeStr = String.fromCharCode(countryCodeInt >> 16)
+    //   + String.fromCharCode(countryCodeInt - ((countryCodeInt >> 16) << 16));
+    function getCountryCode(address toCheck) external view returns (uint);
+  }
       </pre>
       <h4>Contract Addresses</h4>
       <ul class="scroll">
