@@ -1,4 +1,16 @@
 {
+  "0x1": {
+    "rpc": "https://mainnet.infura.io/v3/1845baa28e464b279fd85f83d39e1fdb",
+    "blockExplorer": "https://etherscan.io",
+    "name": "Ethereum Mainnet",
+    "nativeCurrency": {
+      "name": "ETH",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "Verification": "0x3827DC9E48B3691B171Bf2F2C6BC3Cab8218AcF6",
+    "ExampleFeeToken": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+  },
   "0x89": {
     "rpc": "https://polygon-rpc.com/",
     "blockExplorer": "https://polygonscan.com",
