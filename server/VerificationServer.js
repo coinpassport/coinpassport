@@ -1,3 +1,4 @@
+const { randomBytes } = require('crypto');
 const Stripe = require('stripe');
 const { Pool } = require('pg');
 
@@ -111,7 +112,7 @@ module.exports = class VerificationServer extends PostServer {
         if(row.vsstatus === 'verified') {
           // This data is not sensitive
           out.expiration = Number(row.expiration);
-          out.countryAndDocNumberHash = '0x' + row.countryanddocnumberhash.toString('hex');
+          out.countryAndDocNumberHash = await saltHash(db, this.web3, '0x' + row.countryanddocnumberhash.toString('hex'));
           const hash = this.web3.utils.keccak256(this.web3.eth.abi.encodeParameters(
             [ 'address', 'uint256', 'bytes32' ],
             [ '0x' + row.account.toString('hex'),
@@ -154,11 +155,12 @@ module.exports = class VerificationServer extends PostServer {
               verificationReport.document.dob.day
             );
             out.expiration = Math.floor(expirationDate.getTime() / 1000);
-            out.countryAndDocNumberHash = this.web3.utils.keccak256(
+            const rawCountryAndDocNumberHash = this.web3.utils.keccak256(
               verificationReport.document.issuing_country +
               verificationReport.document.number +
               expirationDate.getTime().toString(10)
             );
+            out.countryAndDocNumberHash = await saltHash(db, this.web3, rawCountryAndDocNumberHash);
             const hash = this.web3.utils.keccak256(this.web3.eth.abi.encodeParameters(
               [ 'address', 'uint256', 'bytes32' ],
               [ '0x' + row.account.toString('hex'),
@@ -179,7 +181,7 @@ module.exports = class VerificationServer extends PostServer {
                 verificationSession.status,
                 verificationSession.last_verification_report,
                 out.expiration,
-                Buffer.from(out.countryAndDocNumberHash.slice(2), 'hex'),
+                Buffer.from(rawCountryAndDocNumberHash.slice(2), 'hex'),
                 dobDate,
                 verificationReport.document.issuing_country
               ]
@@ -256,3 +258,24 @@ module.exports = class VerificationServer extends PostServer {
   }
 }
 
+async function saltHash(db, web3, countryAndDocNumberHash) {
+  const existsInDb = await db.query(
+    'SELECT * FROM hash_salts WHERE countryAndDocNumberHash=$1',
+    [ Buffer.from(countryAndDocNumberHash.slice(2), 'hex') ]
+  );
+  let salt;
+  if(existsInDb.rows.length === 0) {
+    salt = randomBytes(32);
+    const insertIntoDb = await db.query(
+      'INSERT INTO hash_salts (countryAndDocNumberHash, salt) VALUES ($1, $2)',
+      [ Buffer.from(countryAndDocNumberHash.slice(2), 'hex'), salt ]
+    );
+    if(insertIntoDb.rowCount !== 1)
+      throw new ReqError(500, 'Internal error storing salt');
+  } else {
+    salt = existsInDb.rows[0].salt;
+  }
+  return web3.utils.keccak256(web3.eth.abi.encodeParameters(
+    [ 'bytes32', 'bytes32' ],
+    [ countryAndDocNumberHash, salt ]));
+}
