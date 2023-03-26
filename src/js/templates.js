@@ -258,41 +258,117 @@ window.templates = {
         <p>${__`After verifying, you may (and should) redact your personal information from our servers. If you wish, you may also revoke your verification status.`}</p>
         <h2>${__`Supported Countries`}</h2>
         <ul class="countries">
+          <li>${__`Albania`}</li>
+          <li>${__`Algeria`}</li>
+          <li>${__`Argentina`}</li>
+          <li>${__`Armenia`}</li>
           <li>${__`Australia`}</li>
           <li>${__`Austria`}</li>
+          <li>${__`Azerbaijan`}</li>
+          <li>${__`Bahamas`}</li>
+          <li>${__`Bahrain`}</li>
+          <li>${__`Bangladesh`}</li>
+          <li>${__`Belarus`}</li>
           <li>${__`Belgium`}</li>
+          <li>${__`Benin`}</li>
+          <li>${__`Bolivia`}</li>
+          <li>${__`Brazil`}</li>
+          <li>${__`Bulgaria`}</li>
+          <li>${__`Cameroon`}</li>
           <li>${__`Canada`}</li>
+          <li>${__`Chile`}</li>
+          <li>${__`China`}</li>
+          <li>${__`Colombia`}</li>
           <li>${__`Costa Rica`}</li>
+          <li>${__`Côte d’Ivoire`}</li>
+          <li>${__`Croatia`}</li>
           <li>${__`Cyprus`}</li>
           <li>${__`Czech Republic`}</li>
           <li>${__`Denmark`}</li>
+          <li>${__`Dominican Republic`}</li>
+          <li>${__`Ecuador`}</li>
+          <li>${__`Egypt`}</li>
+          <li>${__`El Salvador`}</li>
           <li>${__`Estonia`}</li>
           <li>${__`Finland`}</li>
           <li>${__`France`}</li>
+          <li>${__`Georgia`}</li>
           <li>${__`Germany`}</li>
+          <li>${__`Ghana`}</li>
+          <li>${__`Greece`}</li>
+          <li>${__`Guatemala`}</li>
+          <li>${__`Haiti`}</li>
+          <li>${__`Honduras`}</li>
           <li>${__`Hong Kong`}</li>
+          <li>${__`Hungary`}</li>
+          <li>${__`India`}</li>
+          <li>${__`Indonesia`}</li>
+          <li>${__`Iraq`}</li>
           <li>${__`Ireland`}</li>
+          <li>${__`Israel`}</li>
           <li>${__`Italy`}</li>
+          <li>${__`Jamaica`}</li>
+          <li>${__`Japan`}</li>
+          <li>${__`Jersey`}</li>
+          <li>${__`Jordan`}</li>
+          <li>${__`Kazakhstan`}</li>
+          <li>${__`Kenya`}</li>
+          <li>${__`Kuwait`}</li>
           <li>${__`Latvia`}</li>
+          <li>${__`Lebanon`}</li>
           <li>${__`Liechtenstein`}</li>
           <li>${__`Lithuania`}</li>
-          <li>${__`Luxemborg`}</li>
+          <li>${__`Luxembourg`}</li>
+          <li>${__`Malaysia`}</li>
           <li>${__`Malta`}</li>
+          <li>${__`Mauritius`}</li>
+          <li>${__`Mexico`}</li>
+          <li>${__`Moldova`}</li>
+          <li>${__`Mongolia`}</li>
+          <li>${__`Morocco`}</li>
+          <li>${__`Myanmar (Burma)`}</li>
+          <li>${__`Nepal`}</li>
           <li>${__`Netherlands`}</li>
           <li>${__`New Zealand`}</li>
+          <li>${__`Nigeria`}</li>
+          <li>${__`North Macedonia`}</li>
           <li>${__`Norway`}</li>
+          <li>${__`Pakistan`}</li>
+          <li>${__`Palestinian Territories`}</li>
+          <li>${__`Panama`}</li>
+          <li>${__`Paraguay`}</li>
+          <li>${__`Peru`}</li>
+          <li>${__`Philippines`}</li>
+          <li>${__`Poland`}</li>
           <li>${__`Portugal`}</li>
+          <li>${__`Puerto Rico`}</li>
           <li>${__`Romania`}</li>
+          <li>${__`Russia`}</li>
+          <li>${__`Saudi Arabia`}</li>
+          <li>${__`Serbia`}</li>
+          <li>${__`Singapore`}</li>
           <li>${__`Slovakia`}</li>
           <li>${__`Slovenia`}</li>
+          <li>${__`South Africa`}</li>
+          <li>${__`South Korea`}</li>
           <li>${__`Spain`}</li>
+          <li>${__`Sri Lanka`}</li>
           <li>${__`Sweden`}</li>
           <li>${__`Switzerland`}</li>
+          <li>${__`Taiwan`}</li>
+          <li>${__`Thailand`}</li>
+          <li>${__`Tunisia`}</li>
+          <li>${__`Turkey`}</li>
+          <li>${__`Uganda`}</li>
+          <li>${__`Ukraine`}</li>
           <li>${__`United Arab Emirates`}</li>
           <li>${__`United Kingdom`}</li>
           <li>${__`United States`}</li>
+          <li>${__`Uruguay`}</li>
+          <li>${__`Uzbekistan`}</li>
+          <li>${__`Venezuela`}</li>
+          <li>${__`Vietnam`}</li>
         </ul>
-        <p>${__`Stripe promises more countries to be supported in the near future.`}</p>
         </section>
       </div>
     `;
