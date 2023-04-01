@@ -9,6 +9,14 @@ const lang = {
   fr: {
     English: 'Français',
     uri: 'lang/fr.json'
+  },
+  de: {
+    English: 'Deutsch',
+    uri: 'lang/de.json'
+  },
+  jp: {
+    English: '日本語',
+    uri: 'lang/jp.json'
   }
 };
 
