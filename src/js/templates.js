@@ -5,6 +5,10 @@ const lang = {
   es: {
     English: 'Espa\u00F1ol',
     uri: 'lang/es.json'
+  },
+  fr: {
+    English: 'Français',
+    uri: 'lang/fr.json'
   }
 };
 
