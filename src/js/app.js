@@ -1,4 +1,4 @@
-const SERVER_URL = 'https://api.coinpassport.net';
+const SERVER_URL = 'https://kgl3orcc2drv6kpqvqukuofik40rtrcf.lambda-url.us-west-2.on.aws';
 const CHECK_STATUS_TIMEOUT = 3000;
 
 class CoinpassportApp {
@@ -327,6 +327,7 @@ class CoinpassportApp {
       method: 'POST',
       body: JSON.stringify({
         chainId: this.chainId,
+        account: this.accounts[0],
         signature
       }),
       headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -357,6 +358,7 @@ class CoinpassportApp {
       method: 'POST',
       body: JSON.stringify({
         chainId: this.chainId,
+        account: this.accounts[0],
         signature
       }),
       headers: { "Content-type": "application/json; charset=UTF-8" }
