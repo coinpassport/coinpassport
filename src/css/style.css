@@ -31,14 +31,15 @@ section { max-width: 720px; padding: 30px 20px; margin: 0 auto; }
 p.lead { font-weight: bold; }
 p.intro { color: #fff; }
 #how-it-works { display: flex; padding: 10px 0 10px 10px; }
+#how-it-works li { margin: 0 10px; width: 100%; padding: 10px; }
 @media (max-width: 500px) {
   #how-it-works { flex-direction: column; }
-  #how-it-works li { padding-bottom: 10px; }
+  #how-it-works li { padding-bottom: 10px; margin:0; }
 }
-#how-it-works li { margin: 0 10px; width: 100%; padding: 10px; }
 ul.countries { list-style: none; columns: 3; line-height: 1.2em; padding: 0; text-align: center; }
 @media (max-width: 400px) { ul.countries { columns: 2; } }
 ul.countries li { padding-bottom: 8px; }
+img {max-width:100%;}
 
 #status .active { margin-top: 30px; padding: 20px; background:#f5f5f5; border-radius: 5px; box-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
 #status .lds-ring { display: none; }
@@ -48,6 +49,7 @@ ul.countries li { padding-bottom: 8px; }
 #status .msg { display: block; font-size: 120%; font-weight: bold; text-align: center; margin-bottom: 15px; }
 #status dt { float:left; font-weight: bold; }
 #status dt:after { content: ": "; padding-right: 10px; }
+#status dd { clear:both; margin-bottom: 5px; }
 #status .subtext { display: block; margin-bottom: 15px; }
 #status .commands { display: block; margin-bottom: 15px; text-align: center; }
 #status .commands button { margin-top: 10px; }

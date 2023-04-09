@@ -71,7 +71,7 @@ window.templates = {
       </select>
       ${this.accounts.length > 0 ? `
         <button onclick="app.disconnect()" class="disconnect">
-          <span class="account">${this.accounts[0].slice(0, 4)}...${this.accounts[0].slice(-2)}</span>
+          <span class="account" data-ens="${this.accounts[0]}">${this.accounts[0].slice(0, 4)}...${this.accounts[0].slice(-2)}</span>
           <span class="disconnect">${__`Disconnect`}</span>
         </button>
       ` : `
@@ -269,6 +269,7 @@ window.templates = {
         <p>${__`Your individual details will never be revealed. Your verification result only identifies your wallet as belonging to a unique human.`}</p>
         <p>${__`After verifying, you may (and should) redact your personal information from our servers. If you wish, you may also revoke your verification status.`}</p>
         <h2>${__`Supported Countries`}</h2>
+        <img src="/world.svg" alt="${__`Supported Countries`}">
         <ul class="countries">
           <li>${__`Albania`}</li>
           <li>${__`Algeria`}</li>
